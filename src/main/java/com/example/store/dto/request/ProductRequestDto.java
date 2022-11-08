@@ -1,10 +1,10 @@
 package com.example.store.dto.request;
 
-import com.example.store.enums.Category;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 public class ProductRequestDto {
 
@@ -24,8 +24,8 @@ public class ProductRequestDto {
         @NotNull(message = "contents은 필수 입력값입니다.")
         private String contents;
 
-        @NotNull(message = "category는 필수 입력값입니다.")
-        private Category category;
+        @NotNull(message = "categories는 필수 입력값입니다.")
+        private List<Boolean> categories;
 
     }
 

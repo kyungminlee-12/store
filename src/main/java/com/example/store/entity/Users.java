@@ -24,6 +24,10 @@ public class Users extends BaseTime implements UserDetails {
     @Column(name="user_id")
     private Long id;
 
+    @OneToMany(mappedBy = "users")
+    // @JoinTable(name="product_ids")
+    private List<Product> product = new ArrayList<>();
+
     @Column(nullable = false)
     private String email;
 
@@ -35,12 +39,6 @@ public class Users extends BaseTime implements UserDetails {
 
     @Column(nullable = false)
     private String contact;
-
-    // @CreationTimestamp
-    // private Timestamp create_date;
-
-    // @UpdateTimestamp
-    // private Timestamp  modified_date;
 
     @Column(nullable = false)
     @ElementCollection(fetch = FetchType.EAGER)
